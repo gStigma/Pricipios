@@ -20,7 +20,7 @@ async def systemError(ctx):
 @bot.event
 async def on_ready():
       print("Bot establecido")
-      await bot.change_presence(activity = discord.Streaming(name="Genshin impact",url="http:/www.twitch.tv/class_system"))
+      await bot.change_presence(activity = discord.Streaming(name="Genshin impact",url="http:/www.twitch.tv/User"))
 
 @bot.command()
 async def play(ctx, url : str):
@@ -32,7 +32,7 @@ async def play(ctx, url : str):
         await ctx.send("Wait for the current playing music to end or use the 'stop' command")
         return
 
-    voiceChannel = discord.utils.get(ctx.guild.voice_channels, name='Admins')
+    voiceChannel = discord.utils.get(ctx.guild.voice_channels, name='Apex')
     await voiceChannel.connect()
     voice = discord.utils.get(bot.voice_clients, guild = ctx.guild)
 
@@ -84,5 +84,5 @@ async def stop(ctx):
     voice = discord.utils.get(bot.voice_clients, guild=ctx.guild)
     voice.stop()
 
-bot.run('ODgwOTkwMjI2ODAwMDgyOTk1.YSmUFg.cEQc4dXGPIry5DFX4IC9qozht84') #el parametro sera el token
+bot.run('') #el parametro sera el token
 
